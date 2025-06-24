@@ -76,7 +76,7 @@ export const useCalculator = () => {
     }
   };
 
-  const calculate_ = () => {
+  const executeCalculation = () => {
     if (state.operation && state.previousValue !== null && !state.waitingForOperand) {
       const inputValue = parseFloat(state.display);
       const result = calculate(state.previousValue, inputValue, state.operation);
@@ -97,6 +97,6 @@ export const useCalculator = () => {
     inputDecimal,
     clear,
     performOperation,
-    calculate: calculate_,
+    calculate: executeCalculation,
   };
 };
